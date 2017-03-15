@@ -1,3 +1,9 @@
+## Quick start
+
+```bash
+docker-compose up
+```
+
 ## Installation
 
 ```bash
