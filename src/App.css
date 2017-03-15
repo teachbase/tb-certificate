@@ -1,0 +1,17 @@
+.App {
+  padding: 20px;
+  position: relative;
+}
+
+.mode-group {
+  float: right;
+  text-align: right;
+}
+
+.controls-container {
+  text-align: center;
+}
+
+.controls-container button {
+  margin: 20px;
+}

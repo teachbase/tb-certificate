@@ -1,0 +1,47 @@
+.certificate-preview-container {
+  border: 2px solid #d7d7d7;
+  background-color: #f3f3f3;
+  text-align: center;
+  border-radius: 2px;
+  position: relative;
+  box-sizing: content-box;
+  margin: 20px auto;
+}
+
+.certificate-preview-container.a4 {
+  width: 595.28px;
+  height: 841.89px;
+}
+
+.certificate-preview-container.landscape.a4 {
+  width: 841.89px;
+  height: 595.28px;
+}
+
+.certificate-preview {
+  cursor: pointer;
+}
+
+.certificate-preview-container.a4 .certificate-preview {
+  width: 595.28px;
+  height: 841.89px;
+}
+
+.certificate-preview-container.landscape .certificate-preview {
+  cursor: pointer;
+}
+
+.certificate-preview-container.landscape.a4 .certificate-preview {
+  width: 841.89px;
+  height: 595.28px;
+}
+
+a {
+  position: relative;
+  top: 90px;
+  cursor: pointer;
+}
+
+#file-field {
+  display: none;
+}

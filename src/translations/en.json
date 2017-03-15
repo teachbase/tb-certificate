@@ -1,0 +1,41 @@
+{
+  "en": {
+    "translation": {
+      "upload_certificate": "Upload certificate",
+      "page_orientation": {
+        "title": "Page orientation",
+        "portrait": "Portrait",
+        "landscape": "Landscape"
+      },
+      "language": {
+        "title": "Language",
+        "russian": "Russian",
+        "english": "English"
+      },
+      "font_size": "Font size (px)",
+      "color": "Color",
+      "text_align": {
+        "title": "Text align",
+        "left": "Left",
+        "center": "Center",
+        "right": "Right"
+      },
+      "controls": {
+        "get_json": "Get data",
+        "copy_json": "Copy to clipboard"
+      },
+      "errors": {
+        "not_image": "Upload an image"
+      },
+      "fields": {
+        "score": "Score",
+        "score_persent": "Score persent",
+        "session_dates": "Session dates",
+        "finished_at": "Finish date",
+        "fullname": "Name",
+        "course_name": "Course Name",
+        "email": "Email"
+      }
+    }
+  }
+}

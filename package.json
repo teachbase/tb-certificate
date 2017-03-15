@@ -1,0 +1,31 @@
+{
+  "name": "tb-certificate",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "copy-to-clipboard": "^3.0.5",
+    "express": "^4.15.2",
+    "i18next": "^7.1.2",
+    "immutability-helper": "^2.1.2",
+    "react": "^15.4.2",
+    "react-bootstrap": "^0.30.7",
+    "react-bootstrap-toggle": "^2.0.4",
+    "react-dom": "^15.4.2",
+    "react-draggable": "^2.2.3",
+    "react-resizable": "^1.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "react-scripts": "0.9.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "prod": "NODE_ENV=production node --harmony server.js "
+  }
+}

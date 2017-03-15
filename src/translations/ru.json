@@ -1,0 +1,41 @@
+{
+  "ru": {
+    "translation": {
+      "upload_certificate": "Загрузить сертификат",
+      "page_orientation": {
+        "title": "Ориентация",
+        "portrait": "Портретная",
+        "landscape": "Альбомная"
+      },
+      "language": {
+        "title": "Язык",
+        "russian": "Русский",
+        "english": "English"
+      },
+      "font_size": "Размер шрифта (px)",
+      "color": "Цвет",
+      "text_align": {
+        "title": "Выравнивание текста",
+        "left": "По левому краю",
+        "center": "По центру",
+        "right": "По правому краю"
+      },
+      "controls": {
+        "get_json": "Получить данные",
+        "copy_json": "Скопировать в буфер обмена"
+      },
+      "errors": {
+        "not_image": "Загрузите файл изображения"
+      },
+      "fields": {
+        "score": "Результат",
+        "score_persent": "Результат в процентах",
+        "session_dates": "Период сессии",
+        "finished_at": "Дата окончания",
+        "fullname": "Имя",
+        "course_name": "Название курса",
+        "email": "Электронная почта"
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+nginx:
+ build: ./nginx
+ links:
+ - web:web
+ ports:
+ - "80:80"
+
+web:
+ build: .
+ ports:
+ - "8080"

@@ -1,0 +1,47 @@
+{
+  "extends": "eslint-config-airbnb",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "es6": true
+  },
+  "rules": {
+    "react/jsx-filename-extension": "off",
+    "react/forbid-prop-types": "off",
+    "no-param-reassign": "off",
+    "comma-dangle": "off",
+    "no-console": "warn",
+    "no-debugger": "warn",
+    "arrow-parens": "off",
+    "key-spacing": ["error", { "mode": "minimum" }],
+    "max-len": ["error", 120],
+    "indent": ["error", 2, {"SwitchCase": 1}]
+  },
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "settings": {
+    "import/resolve": {
+      "moduleDirectory": [
+        "node_modules",
+        "src"
+      ]
+    }
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "globals": {
+    "__DEVELOPMENT__": true,
+    "__CLIENT__": true,
+    "__SERVER__": true,
+    "__DISABLE_SSR__": true,
+    "__DEVTOOLS__": true,
+    "__DLLS__": true,
+    "socket": true,
+    "webpackIsomorphicTools": true
+  }
+}
