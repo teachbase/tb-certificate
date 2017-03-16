@@ -1,4 +1,14 @@
+.field {
+  padding: 0 40px;
+}
+
+.field .field-group {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 .field .form-group {
-  width: 33%;
-  display: inline-block;
+  width: 25%;
 }

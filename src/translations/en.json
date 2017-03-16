@@ -12,7 +12,7 @@
         "russian": "Russian",
         "english": "English"
       },
-      "font_size": "Font size (px)",
+      "font_size": "Font size",
       "color": "Color",
       "text_align": {
         "title": "Text align",

@@ -1,5 +1,5 @@
 const defaultStyle = {
-  width: 200,
+  width: '50%',
   height: 15,
   fontSize: '12px',
   color: '#000000',

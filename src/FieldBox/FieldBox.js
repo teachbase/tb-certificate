@@ -16,6 +16,13 @@ const FieldBox = ({ id, style, onResize }) => {
 
   style.height = height;
 
+  // Have to be removed later
+  if (style.width === '50%') {
+    const well = document.querySelector(`#${id}`);
+    const padding = 2 * parseInt(getComputedStyle(well).padding, 10);
+    style.width = (well.clientWidth - padding) / 2;
+  }
+
   return (
     <Draggable cancel=".react-resizable-handle">
       <Resizable className="box" width={style.width} height={style.height} onResize={onResize}>

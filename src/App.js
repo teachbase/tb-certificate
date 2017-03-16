@@ -67,10 +67,6 @@ class App extends Component {
   onResize(event, data) {
     const { size } = data;
     const { width, height } = size;
-    const widthChanged = width !== this.state.width;
-    const heightChanged = height !== this.state.height;
-    if (!widthChanged && !heightChanged) return;
-
     const fieldId = data.node.parentNode.id;
 
     this.setState({
@@ -286,16 +282,18 @@ class App extends Component {
         </Row>
         <br />
         {this.renderFields()}
-        <div className="controls-container text-center">
-          <Button onClick={this.calcJSON}>{i18next.t('controls.get_json')}</Button>
-          <Button onClick={this.copyJSON}>{i18next.t('controls.copy_json')}</Button>
-          <FormControl
-            rows={5}
-            componentClass="textarea"
-            value={(json || undefined) && JSON.stringify(json)}
-            readOnly
-          />
-        </div>
+        <Row className="controls-container text-center">
+          <Col sm={6} smOffset={3}>
+            <Button onClick={this.calcJSON}>{i18next.t('controls.get_json')}</Button>
+            <Button onClick={this.copyJSON}>{i18next.t('controls.copy_json')}</Button>
+            <FormControl
+              rows={5}
+              componentClass="textarea"
+              value={(json || undefined) && JSON.stringify(json)}
+              readOnly
+            />
+          </Col>
+        </Row>
       </div>
     );
   }

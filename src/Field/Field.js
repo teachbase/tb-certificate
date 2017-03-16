@@ -19,12 +19,13 @@ const Field = (props) => {
 
   return (
     <Row className="field">
-      <Col sm={6}>
-        <Checkbox inline name={id} onChange={onCheckboxChange}>
+      <Col className="well" id={id} sm={6} smOffset={3}>
+        <Checkbox style={{ width: '50%' }} inline name={id} onChange={onCheckboxChange}>
           {i18next.t(`fields.${id}`)}
         </Checkbox>
+        { chosen && <FieldBox onResize={onResize} id={id} style={style} /> }
         { chosen && (
-          <div>
+          <div className="field-group">
             <FormGroup className="form-group">
               <ControlLabel>{i18next.t('font_size')}</ControlLabel>
               <FormControl
@@ -64,9 +65,6 @@ const Field = (props) => {
             </FormGroup>
           </div>
         )}
-      </Col>
-      <Col sm={6}>
-        {chosen && <FieldBox onResize={onResize} id={id} style={style} />}
       </Col>
     </Row>
   );
