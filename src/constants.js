@@ -11,7 +11,7 @@ export default [
     id: 'score',
   },
   {
-    id: 'score_persent',
+    id: 'score_percent',
   },
   {
     id: 'session_dates',

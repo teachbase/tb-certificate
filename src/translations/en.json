@@ -29,7 +29,7 @@
       },
       "fields": {
         "score": "Score",
-        "score_persent": "Score persent",
+        "score_percent": "Score percent",
         "session_dates": "Session dates",
         "finished_at": "Finish date",
         "fullname": "Name",

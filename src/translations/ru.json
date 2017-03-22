@@ -29,7 +29,7 @@
       },
       "fields": {
         "score": "Результат",
-        "score_persent": "Результат в процентах",
+        "score_percent": "Результат в процентах",
         "session_dates": "Период сессии",
         "finished_at": "Дата окончания",
         "fullname": "Имя",
