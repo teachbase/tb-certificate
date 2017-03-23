@@ -35,7 +35,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      size: 'a4',
+      size: 'A4',
       mode: 'portrait',
       error: null,
       fields: fieldData,
@@ -132,8 +132,11 @@ class App extends Component {
     const benchmarkX = App.getCoords(viewport).left;
     const benchmarkY = App.getCoords(viewport).top + Math.round(parseFloat(getComputedStyle(viewport).height));
 
+    const { size, mode } = this.state;
     const json = {
-      fields: []
+      fields: [],
+      layout: mode,
+      size
     };
 
     document.querySelectorAll('.field-box').forEach((elem) => {

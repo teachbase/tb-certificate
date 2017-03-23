@@ -26,7 +26,7 @@ const Preview = props => {
 
   const className = classNames('certificate-preview-container', {
     landscape: mode === 'landscape',
-    [size]: true
+    [size.toLowerCase()]: true
   });
 
   return (
@@ -55,7 +55,7 @@ Preview.propTypes = {
 Preview.defaultProps = {
   previewSrc: null,
   mode:       'portrait',
-  size:       'a4'
+  size:       'A4'
 };
 
 export default Preview;
