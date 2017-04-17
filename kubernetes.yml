@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tb-cert-cvs
+  labels:
+    app: tb-cert
+spec:
+  type: LoadBalancer
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: tb-cert
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: tb-cert-deploy
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: tb-cert
+    spec:
+      containers:
+      - name: tb-cert
+        image: eu.gcr.io/big-keyword-788/tb-cert:latest
+        ports:
+        - containerPort: 8080
