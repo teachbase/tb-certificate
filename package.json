@@ -27,5 +27,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "prod": "NODE_ENV=production node --harmony server.js "
+  },
+  "engines": {
+    "node": "8.1.x"
   }
 }
