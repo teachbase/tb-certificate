@@ -10,7 +10,6 @@
     "react/jsx-filename-extension": "off",
     "react/forbid-prop-types": "off",
     "no-param-reassign": "off",
-    "comma-dangle": "off",
     "no-console": "warn",
     "no-debugger": "warn",
     "arrow-parens": "off",

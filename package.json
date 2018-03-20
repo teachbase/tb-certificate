@@ -26,12 +26,13 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "prod": "NODE_ENV=production node --harmony server.js "
+    "prod": "NODE_ENV=production node --harmony server.js",
+    "lint": "eslint ."
   },
   "cacheDirectories": [
     "node_modules"
   ],
   "engines": {
-    "node": "8.1.x"
+    "node": "8.9.4"
   }
 }
