@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/EnrikoLabriko/tb-certificate/tree/master.svg?style=svg)](https://circleci.com/gh/EnrikoLabriko/tb-certificate/tree/master)
+
 ## Quick start
 
 ```bash
