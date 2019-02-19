@@ -32,6 +32,6 @@
     "node_modules"
   ],
   "engines": {
-    "node": "8.1.x"
+    "node": "8.x.x"
   }
 }
