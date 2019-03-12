@@ -32,6 +32,7 @@
         "score_percent": "Score percent",
         "session_dates": "Session dates",
         "finished_at": "Finish date",
+        "cert_uuid": "Certificate ID",
         "fullname": "Name",
         "course_name": "Course Name",
         "email": "Email"

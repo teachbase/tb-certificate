@@ -20,6 +20,9 @@ export default [
     id: 'finished_at',
   },
   {
+    id: 'cert_uuid',
+  },
+  {
     id: 'fullname',
   },
   {
