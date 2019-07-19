@@ -31,3 +31,10 @@ The build is minified and the filenames include the hashes and it correctly bund
 npm run prod
 ```
 Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
+
+## Deploy 
+```
+$ cd /webapps/tb_certs
+$ git pull origin master
+$ npm run build
+```
