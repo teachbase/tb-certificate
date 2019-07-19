@@ -36,5 +36,5 @@ Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
 ```
 $ cd /webapps/tb_certs
 $ git pull origin master
-$ npm run build
+$ yarn build
 ```
