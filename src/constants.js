@@ -31,6 +31,9 @@ export default [
   {
     id: 'email',
   },
+  {
+    id: 'expired_at',
+  },
 ].reduce((prev, { id }) => {
   prev[id] = {
     chosen: false,

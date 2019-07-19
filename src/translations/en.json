@@ -35,6 +35,7 @@
         "cert_uuid": "Certificate ID",
         "fullname": "Name",
         "course_name": "Course Name",
+        "expired_at": "Valid through",
         "email": "Email"
       }
     }
