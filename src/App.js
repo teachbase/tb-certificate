@@ -127,6 +127,10 @@ class App extends Component {
     });
   }
 
+  addGroup() {
+    console.log('Show group field')
+  }
+
   calcJSON() {
     const viewport = document.querySelector('.certificate-preview-container');
     const benchmarkX = App.getCoords(viewport).left;
@@ -285,6 +289,14 @@ class App extends Component {
         </Row>
         <br />
         {this.renderFields()}
+        <Row className="text-center">
+          <Col sm={6} smOffset={3}>
+            <FormGroup className="form-group">
+              <ControlLabel>{i18next.t('color')}</ControlLabel>
+            </FormGroup>
+            <Button onClick={this.addGroup}>{i18next.t('labels.add')}</Button>
+          </Col>
+        </Row>
         <Row className="controls-container text-center">
           <Col sm={6} smOffset={3}>
             <Button onClick={this.calcJSON}>{i18next.t('controls.get_json')}</Button>

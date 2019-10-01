@@ -24,6 +24,9 @@
         "get_json": "Get data",
         "copy_json": "Copy to clipboard"
       },
+      "labels": {
+        "add": "Add group"
+      },
       "errors": {
         "not_image": "Upload an image"
       },
