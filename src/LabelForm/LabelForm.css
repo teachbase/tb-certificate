@@ -9,11 +9,11 @@
 
 .label-form-name, .label-form-id {
   display: inline-block;
+  margin-right: 20px;
 }
 
 .label-form-id {
   width: 100px;
-  margin-right: 20px;
   margin-left: 40px;
 }
 

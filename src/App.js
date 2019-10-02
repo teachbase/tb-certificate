@@ -40,6 +40,7 @@ class App extends Component {
       mode: 'portrait',
       error: null,
       fields: fieldData,
+      labels: [],
       lang: 'ru',
       previewSrc: '',
       json: null
@@ -286,7 +287,8 @@ class App extends Component {
         </Row>
         <br />
         {this.renderFields()}
-        <LabelForm lang={this.state.lang} />
+        <LabelForm lang={this.state.lang} addLabels={this.addLabels} />
+        <LabelList labels={this.state.labels} />
         <Row className="controls-container text-center">
           <Col sm={6} smOffset={3}>
             <Button onClick={this.calcJSON}>{i18next.t('controls.get_json')}</Button>
