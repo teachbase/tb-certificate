@@ -1,0 +1,22 @@
+/*.form {
+  width: 100%
+}
+*/
+
+.label-form {
+  display: inline;
+}
+
+.label-form-name, .label-form-id {
+  display: inline-block;
+}
+
+.label-form-id {
+  width: 100px;
+  margin-right: 20px;
+  margin-left: 40px;
+}
+
+.label-form-name {
+  width: 250px;
+}

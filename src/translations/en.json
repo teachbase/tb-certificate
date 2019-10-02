@@ -25,7 +25,11 @@
         "copy_json": "Copy to clipboard"
       },
       "labels": {
-        "add": "Add group"
+        "add": "Add group",
+        "placeholder": {
+          "id": "Group ID",
+          "name": "Printed name"
+        }
       },
       "errors": {
         "not_image": "Upload an image"

@@ -8,6 +8,7 @@ import { Alert, Row, Col, FormControl, Button, FormGroup, ControlLabel } from 'r
 
 import Preview from './Preview';
 import Field from './Field';
+import LabelForm from './LabelForm';
 
 import './App.css';
 import './bootstrap-toggle.css';
@@ -125,10 +126,6 @@ class App extends Component {
         }
       })
     });
-  }
-
-  addGroup() {
-    console.log('Show group field')
   }
 
   calcJSON() {
@@ -289,14 +286,7 @@ class App extends Component {
         </Row>
         <br />
         {this.renderFields()}
-        <Row className="text-center">
-          <Col sm={6} smOffset={3}>
-            <FormGroup className="form-group">
-              <ControlLabel>{i18next.t('color')}</ControlLabel>
-            </FormGroup>
-            <Button onClick={this.addGroup}>{i18next.t('labels.add')}</Button>
-          </Col>
-        </Row>
+        <LabelForm lang={this.state.lang} />
         <Row className="controls-container text-center">
           <Col sm={6} smOffset={3}>
             <Button onClick={this.calcJSON}>{i18next.t('controls.get_json')}</Button>
