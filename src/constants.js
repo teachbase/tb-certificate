@@ -1,4 +1,4 @@
-const defaultStyle = {
+export const defaultStyle = {
   width: '50%',
   height: 15,
   fontSize: '12px',

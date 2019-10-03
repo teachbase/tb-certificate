@@ -9,6 +9,7 @@ import { Alert, Row, Col, FormControl, Button, FormGroup, ControlLabel } from 'r
 import Preview from './Preview';
 import Field from './Field';
 import LabelForm from './LabelForm';
+import LabelList from './LabelList';
 
 import './App.css';
 import './bootstrap-toggle.css';
@@ -229,6 +230,7 @@ class App extends Component {
         <Field
           key={fieldId}
           id={fieldId}
+          text={i18next.t(`fields.${fieldId}`)}
           handleFormControlChange={this.handleFormControlChange}
           style={style}
           chosen={chosen}
@@ -237,6 +239,34 @@ class App extends Component {
           onCheckboxChange={this.onCheckboxChange}
         />
       );
+    });
+  }
+
+  renderLabels() {
+    const { lang, labels } = this.state;
+
+    return labels.map(pair => {
+      [group, label] = pair;
+      groupFieldId = `group_${group.id}`;
+      groupName = !!group.name ? group.name : i18next.t('labels.group')
+      groupText = `${group.id} ${groupName}`
+
+      labelFieldId
+
+      return(
+        <Field
+          key={fieldId}
+          id={fieldId}
+          text={i18next.t(`fields.${fieldId}`)}
+          name=
+          handleFormControlChange={this.handleFormControlChange}
+          style={style}
+          chosen={chosen}
+          lang={lang}
+          onResize={this.onResize}
+          onCheckboxChange={this.onCheckboxChange}
+        />
+      )
     });
   }
 
@@ -288,7 +318,7 @@ class App extends Component {
         <br />
         {this.renderFields()}
         <LabelForm lang={this.state.lang} addLabels={this.addLabels} />
-        <LabelList labels={this.state.labels} />
+        {/* <LabelList labels={this.state.labels} /> */}
         <Row className="controls-container text-center">
           <Col sm={6} smOffset={3}>
             <Button onClick={this.calcJSON}>{i18next.t('controls.get_json')}</Button>
