@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
 import i18next from 'i18next';
-import update from 'immutability-helper';
 import copy from 'copy-to-clipboard';
 
 import Toggle from 'react-bootstrap-toggle';
 import { Alert, Row, Col, FormControl, Button, FormGroup, ControlLabel } from 'react-bootstrap';
 
 import Preview from './Preview';
-import Field from './Field';
 import LabelForm from './LabelForm';
-import LabelList from './LabelList';
+import FieldList from './FieldList';
 
 import './App.css';
 import './bootstrap-toggle.css';
-
-import fieldData, { constants } from './constants';
 
 import ru from './translations/ru.json';
 import en from './translations/en.json';
@@ -40,22 +36,17 @@ class App extends Component {
       size: 'A4',
       mode: 'portrait',
       error: null,
-      fields: fieldData,
-      labels: [],
       lang: 'ru',
       previewSrc: '',
       json: null
     };
 
     this.handleAlertDismiss = this.handleAlertDismiss.bind(this);
-    this.onChange = this.onChange.bind(this);
-    this.onResize = this.onResize.bind(this);
     this.calcJSON = this.calcJSON.bind(this);
     this.copyJSON = this.copyJSON.bind(this);
+    this.onChange = this.onChange.bind(this);
     this.onChangeMode = this.onChangeMode.bind(this);
     this.onChangeLang = this.onChangeLang.bind(this);
-    this.onCheckboxChange = this.onCheckboxChange.bind(this);
-    this.handleFormControlChange = this.handleFormControlChange.bind(this);
   }
 
   componentWillMount() {
@@ -64,25 +55,6 @@ class App extends Component {
     i18next.init({
       lng: lang,
       resources: Object.assign(ru, en)
-    });
-  }
-
-  onResize(event, data) {
-    const { size } = data;
-    const { width, height } = size;
-    const fieldId = data.node.parentNode.id;
-
-    this.setState({
-      fields: update(this.state.fields, {
-        [fieldId]: {
-          style: {
-            $merge: {
-              width,
-              height
-            }
-          }
-        }
-      })
     });
   }
 
@@ -114,20 +86,6 @@ class App extends Component {
     const lang = isRu ? 'ru' : 'en';
 
     this.setState({ lang }, i18next.changeLanguage(lang));
-  }
-
-  onCheckboxChange(e) {
-    const { name, checked } = e.target;
-
-    this.setState({
-      fields: update(this.state.fields, {
-        [name]: {
-          $merge: {
-            chosen: checked
-          }
-        }
-      })
-    });
   }
 
   calcJSON() {
@@ -189,87 +147,6 @@ class App extends Component {
     this.setState({ error: null });
   }
 
-  handleFormControlChange(e) {
-    const {
-      target: {
-        name,
-        type,
-        dataset: {
-          cssName
-        }
-      }
-    } = e;
-
-    let value = e.target.value;
-
-    if (type === 'number' && parseInt(value, 10) > constants.maxFontSize) return;
-    if (type === 'number' && value !== '') {
-      value += 'px';
-    }
-
-    this.setState({
-      fields: update(this.state.fields, {
-        [name]: {
-          style: {
-            $merge: {
-              [cssName]: value
-            }
-          }
-        }
-      })
-    });
-  }
-
-  renderFields() {
-    const { lang, fields } = this.state;
-
-    return Object.keys(fields).map(fieldId => {
-      const { style, chosen } = fields[fieldId];
-
-      return (
-        <Field
-          key={fieldId}
-          id={fieldId}
-          text={i18next.t(`fields.${fieldId}`)}
-          handleFormControlChange={this.handleFormControlChange}
-          style={style}
-          chosen={chosen}
-          lang={lang}
-          onResize={this.onResize}
-          onCheckboxChange={this.onCheckboxChange}
-        />
-      );
-    });
-  }
-
-  renderLabels() {
-    const { lang, labels } = this.state;
-
-    return labels.map(pair => {
-      [group, label] = pair;
-      groupFieldId = `group_${group.id}`;
-      groupName = !!group.name ? group.name : i18next.t('labels.group')
-      groupText = `${group.id} ${groupName}`
-
-      labelFieldId
-
-      return(
-        <Field
-          key={fieldId}
-          id={fieldId}
-          text={i18next.t(`fields.${fieldId}`)}
-          name=
-          handleFormControlChange={this.handleFormControlChange}
-          style={style}
-          chosen={chosen}
-          lang={lang}
-          onResize={this.onResize}
-          onCheckboxChange={this.onCheckboxChange}
-        />
-      )
-    });
-  }
-
   render() {
     const { error, previewSrc, lang, mode, json, size } = this.state;
 
@@ -316,7 +193,7 @@ class App extends Component {
           </Col>
         </Row>
         <br />
-        {this.renderFields()}
+        <FieldList lang={this.state.lang} />
         <LabelForm lang={this.state.lang} addLabels={this.addLabels} />
         {/* <LabelList labels={this.state.labels} /> */}
         <Row className="controls-container text-center">

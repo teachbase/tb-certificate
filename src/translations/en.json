@@ -26,6 +26,8 @@
       },
       "labels": {
         "add": "Add group",
+        "label": "{{group_id}} Group",
+        "group": "Subgroup",
         "placeholder": {
           "id": "Group ID",
           "name": "Printed name"
