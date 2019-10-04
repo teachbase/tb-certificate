@@ -5,6 +5,8 @@ import copy from 'copy-to-clipboard';
 import Toggle from 'react-bootstrap-toggle';
 import { Alert, Row, Col, FormControl, Button, FormGroup, ControlLabel } from 'react-bootstrap';
 
+import { connect } from 'react-redux';
+
 import Preview from './Preview';
 import LabelForm from './LabelForm';
 import FieldList from './FieldList';
@@ -213,4 +215,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  const { fields } = state;
+
+  return { fields };
+};
+
+export default connect(mapStateToProps)(App);
