@@ -102,6 +102,7 @@ class App extends Component {
       size
     };
 
+    /*
     document.querySelectorAll('.field-box').forEach((elem) => {
       const elemId = elem.id;
       const {
@@ -126,6 +127,7 @@ class App extends Component {
         });
       }
     });
+    */
 
     this.setState({ json });
   }
@@ -195,7 +197,7 @@ class App extends Component {
           </Col>
         </Row>
         <br />
-        <FieldList lang={this.state.lang} />
+        <FieldList lang={this.state.lang} fields={this.props.fields} />
         <LabelForm lang={this.state.lang} addLabels={this.addLabels} />
         {/* <LabelList labels={this.state.labels} /> */}
         <Row className="controls-container text-center">

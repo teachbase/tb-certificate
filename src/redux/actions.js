@@ -1,7 +1,7 @@
 import * as types from './actionTypes';
 
-export const AddField = field => ({
-  type: types.ADD_FIELD, field
+export const setField = field => ({
+  type: types.SET_FIELD, field
 });
 
 export const removeField = field => ({

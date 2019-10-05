@@ -1,10 +1,11 @@
 import * as types from './actionTypes';
+import fieldData from '../constants';
 
-const initialState = { fields: {} };
+const initialState = { fields: fieldData };
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case types.ADD_FIELD:
+    case types.SET_FIELD:
       return {
         ...state, fields: { ...state.fields, ...action.field }
       };

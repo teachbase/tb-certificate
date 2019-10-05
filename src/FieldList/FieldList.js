@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import i18next from 'i18next';
 import update from 'immutability-helper';
+import { connect } from 'react-redux';
+import { setField } from '../redux/actions';
 import Field from '../Field';
 import fieldData, { constants } from '../constants';
 
@@ -16,8 +18,19 @@ class FieldList extends Component {
   onResize(event, data) {
     const { size } = data;
     const { width, height } = size;
-    const fieldId = data.node.parentNode.id;
+    const name = data.node.parentNode.id;
+    const field = this.props.fields[name];
 
+    this.props.setField({
+      [name]: {
+        ...field,
+        style: {
+          ...field.style, width, height
+        }
+      }
+    });
+
+    /*
     this.setState({
       fields: update(this.state.fields, {
         [fieldId]: {
@@ -30,20 +43,28 @@ class FieldList extends Component {
         }
       })
     });
+    */
   }
 
   onCheckboxChange(e) {
     const { name, checked } = e.target;
+    const field = this.props.fields[name];
 
+    this.props.setField({
+      [name]: { ...field, chosen: checked }
+    });
+
+    /*
     this.setState({
       fields: update(this.state.fields, {
-        [name]: {
+        [fieldId]: {
           $merge: {
             chosen: checked
           }
         }
       })
     });
+    */
   }
 
   handleFormControlChange(e) {
@@ -56,6 +77,7 @@ class FieldList extends Component {
         }
       }
     } = e;
+    const field = this.props.fields[name];
 
     let value = e.target.value;
 
@@ -64,9 +86,19 @@ class FieldList extends Component {
       value += 'px';
     }
 
+    this.props.setField({
+      [name]: {
+        ...field,
+        style: {
+          ...field.style, [cssName]: value
+        }
+      }
+    });
+
+      /*
     this.setState({
       fields: update(this.state.fields, {
-        [name]: {
+        [fieldId]: {
           style: {
             $merge: {
               [cssName]: value
@@ -75,11 +107,12 @@ class FieldList extends Component {
         }
       })
     });
+    */
   }
 
   render() {
-    const { lang } = this.props;
-    const { fields } = this.state;
+    const { lang, fields } = this.props;
+    /*const { fields } = this.state;*/
 
     return (
       <div>
@@ -104,7 +137,9 @@ class FieldList extends Component {
 }
 
 FieldList.propTypes = {
-  lang: PropTypes.string.isRequired,
+  lang:     PropTypes.string.isRequired,
+  setField: PropTypes.func.isRequired,
+  fields:   PropTypes.object.isRequired,
 };
 
-export default FieldList;
+export default connect(null, { setField })(FieldList);
