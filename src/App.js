@@ -157,7 +157,7 @@ class App extends Component {
         )}
         <Col sm={4} md={4} className="fields">
           <FieldList lang={this.state.lang} fields={this.props.fields} />
-          <h4>Groups</h4>
+          <h4>{i18next.t('labels.title')}</h4>
           <LabelForm lang={this.state.lang} addLabels={this.addLabels} />
         </Col>
         <Col sm={7} md={7}>
