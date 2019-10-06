@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import i18next from 'i18next';
 import copy from 'copy-to-clipboard';
 
@@ -102,15 +102,9 @@ class App extends Component {
       size
     };
 
-    /*
     document.querySelectorAll('.field-box').forEach((elem) => {
       const elemId = elem.id;
-      const {
-        fields: {
-          [elemId]: field
-        }
-      } = this.state;
-
+      const field = this.props.fields[elemId];
       const x = Math.round(App.getCoords(elem).left - benchmarkX);
       const y = Math.round(benchmarkY - App.getCoords(elem).top);
 
@@ -127,7 +121,6 @@ class App extends Component {
         });
       }
     });
-    */
 
     this.setState({ json });
   }
@@ -165,7 +158,6 @@ class App extends Component {
           <FieldList lang={this.state.lang} fields={this.props.fields} />
           <h4>Groups</h4>
           <LabelForm lang={this.state.lang} addLabels={this.addLabels} />
-          {/* <LabelList labels={this.state.labels} /> */}
         </Col>
         <Col sm={7} md={7}>
           <Row>
@@ -223,6 +215,10 @@ const mapStateToProps = state => {
   const { fields } = state;
 
   return { fields };
+};
+
+App.propTypes = {
+  fields: PropTypes.object.isRequired,
 };
 
 export default connect(mapStateToProps)(App);

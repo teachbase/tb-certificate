@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import i18next from 'i18next';
 import { connect } from 'react-redux';
-import { Form, FormGroup, FormControl, Button } from 'react-bootstrap';
+import { FormGroup, FormControl, Button } from 'react-bootstrap';
 import { defaultStyle } from '../constants';
 import { setField } from '../redux/actions';
 
@@ -14,15 +14,6 @@ class LabelForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  getValidationState() {
-    const { id, usedIds } = this.state;
-    const error = usedIds.includes(id);
-
-    this.setState({ error });
-    return error ? 'error' : null;
-  }
-
 
   handleChange(event) {
     const { name, value } = event.target;
@@ -39,8 +30,8 @@ class LabelForm extends React.Component {
     event.preventDefault();
 
     const { id, name, usedIds } = this.state;
-    const groupName = `ID ${id} ${name || i18next.t('labels.group')}`;
-    const labelName = `ID ${id} ${i18next.t('labels.label')}`;
+    const groupName = `${name || i18next.t('labels.group')} (ID ${id})`;
+    const labelName = `${i18next.t('labels.label')} (ID ${id})`;
 
     this.props.setField({
       [`group_${id}`]: {
@@ -82,7 +73,6 @@ class LabelForm extends React.Component {
         </FormGroup>
         <FormGroup controlId="LabelFormName" className="label-form-field">
           <FormControl
-            required
             className="label-form-name"
             type="text"
             name="name"
@@ -96,5 +86,9 @@ class LabelForm extends React.Component {
     );
   }
 }
+
+LabelForm.propTypes = {
+  setField: PropTypes.func.isRequired,
+};
 
 export default connect(null, { setField })(LabelForm);

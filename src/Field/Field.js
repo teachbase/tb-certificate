@@ -24,7 +24,7 @@ const Field = (props) => {
         <Checkbox inline name={id} onChange={onCheckboxChange}>
           {text}
         </Checkbox>
-        { chosen && <FieldBox onResize={onResize} id={id} style={style} /> }
+        { chosen && <FieldBox onResize={onResize} id={id} text={text} style={style} /> }
         { chosen && (
           <div className="field-group">
             <FormGroup className="form-group">

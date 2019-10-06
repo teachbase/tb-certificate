@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import i18next from 'i18next';
-import update from 'immutability-helper';
 import { connect } from 'react-redux';
 import { setField } from '../redux/actions';
 import Field from '../Field';
@@ -29,21 +28,6 @@ class FieldList extends Component {
         }
       }
     });
-
-    /*
-    this.setState({
-      fields: update(this.state.fields, {
-        [fieldId]: {
-          style: {
-            $merge: {
-              width,
-              height
-            }
-          }
-        }
-      })
-    });
-    */
   }
 
   onCheckboxChange(e) {
@@ -53,18 +37,6 @@ class FieldList extends Component {
     this.props.setField({
       [name]: { ...field, chosen: checked }
     });
-
-    /*
-    this.setState({
-      fields: update(this.state.fields, {
-        [fieldId]: {
-          $merge: {
-            chosen: checked
-          }
-        }
-      })
-    });
-    */
   }
 
   handleFormControlChange(e) {
@@ -94,25 +66,10 @@ class FieldList extends Component {
         }
       }
     });
-
-      /*
-    this.setState({
-      fields: update(this.state.fields, {
-        [fieldId]: {
-          style: {
-            $merge: {
-              [cssName]: value
-            }
-          }
-        }
-      })
-    });
-    */
   }
 
   render() {
     const { lang, fields } = this.props;
-    /*const { fields } = this.state;*/
 
     return (
       <div>
