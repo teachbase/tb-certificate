@@ -31,6 +31,9 @@
         "placeholder": {
           "id": "Group ID",
           "name": "Printed name"
+        },
+        "validation": {
+          "not_uniq": "Field with ID already exists."
         }
       },
       "errors": {

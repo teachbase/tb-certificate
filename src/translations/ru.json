@@ -31,6 +31,9 @@
         "placeholder": {
           "id": "ID группы",
           "name": "Название на сертификате"
+        },
+        "validation": {
+          "not_uniq": "Поле с таким ID уже добавлено."
         }
       },
       "errors": {

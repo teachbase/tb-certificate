@@ -121,7 +121,7 @@ class FieldList extends Component {
             <Field
               key={fieldId}
               id={fieldId}
-              text={i18next.t(`fields.${fieldId}`)}
+              text={fields[fieldId].text || i18next.t(`fields.${fieldId}`)}
               handleFormControlChange={this.handleFormControlChange}
               style={fields[fieldId].style}
               chosen={fields[fieldId].chosen}
