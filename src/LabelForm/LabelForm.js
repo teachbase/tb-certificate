@@ -30,14 +30,15 @@ class LabelForm extends React.Component {
     event.preventDefault();
 
     const { id, name, usedIds } = this.state;
-    const groupName = `${name || i18next.t('labels.group')} (ID ${id})`;
+    const groupName = name || `${i18next.t('labels.group')} (ID ${id})`;
     const labelName = `${i18next.t('labels.label')} (ID ${id})`;
 
     this.props.setField({
       [`group_${id}`]: {
         chosen: false,
         style: defaultStyle,
-        text: groupName
+        text: groupName,
+        ...name && { customText: name }
       }
     });
     this.props.setField({

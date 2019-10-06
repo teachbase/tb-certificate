@@ -117,7 +117,8 @@ class App extends Component {
           align: field.style.textAlign,
           font_color: field.style.color.slice(1),
           font_size: parseInt(field.style.fontSize, 10),
-          source: elemId
+          source: elemId,
+          ...field.customText && { text: field.customText }
         });
       }
     });

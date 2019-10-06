@@ -3,12 +3,11 @@ import i18next from 'i18next';
 import { connect } from 'react-redux';
 import { setField } from '../redux/actions';
 import Field from '../Field';
-import fieldData, { constants } from '../constants';
+import { constants } from '../constants';
 
 class FieldList extends Component {
   constructor(props) {
     super(props);
-    this.state = { fields: fieldData };
     this.handleFormControlChange = this.handleFormControlChange.bind(this);
     this.onResize = this.onResize.bind(this);
     this.onCheckboxChange = this.onCheckboxChange.bind(this);
