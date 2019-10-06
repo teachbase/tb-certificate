@@ -3,7 +3,7 @@ import i18next from 'i18next';
 import copy from 'copy-to-clipboard';
 
 import Toggle from 'react-bootstrap-toggle';
-import { Alert, Row, Col, FormControl, Button, FormGroup, ControlLabel } from 'react-bootstrap';
+import { Alert, Col, Form, Button } from 'react-bootstrap';
 
 import { connect } from 'react-redux';
 
@@ -43,7 +43,7 @@ class App extends Component {
       json: null
     };
 
-    this.handleAlertDismiss = this.handleAlertDismiss.bind(this);
+    this.handleAlertClose = this.handleAlertClose.bind(this);
     this.calcJSON = this.calcJSON.bind(this);
     this.copyJSON = this.copyJSON.bind(this);
     this.onChange = this.onChange.bind(this);
@@ -147,7 +147,7 @@ class App extends Component {
     }, 3000);
   }
 
-  handleAlertDismiss() {
+  handleAlertClose() {
     this.setState({ error: null });
   }
 
@@ -157,14 +157,14 @@ class App extends Component {
     return (
       <div className="App">
         {error && (
-          <Col sm={6} smOffset={3}>
-            <Alert className="text-center" bsStyle="danger" onDismiss={this.handleAlertDismiss}>{error}</Alert>
+          <Col sm={{ span: 6, offset: 3 }}>
+            <Alert className="text-center" bsStyle="danger" onClose={this.handleAlertClose}>{error}</Alert>
           </Col>
         )}
-        <Row>
-          <Col sm={2} smOffset={4}>
-            <FormGroup className="mode-group">
-              <ControlLabel>{i18next.t('page_orientation.title')}</ControlLabel>
+        <Form.Row>
+          <Col sm={{ span: 2, offset: 4 }}>
+            <Form.Group className="mode-group">
+              <Form.Label>{i18next.t('page_orientation.title')}</Form.Label>
               <br />
               <Toggle
                 onClick={this.onChangeMode}
@@ -174,11 +174,11 @@ class App extends Component {
                 offstyle="primary"
                 active={mode === 'portrait'}
               />
-            </FormGroup>
+            </Form.Group>
           </Col>
           <Col sm={2}>
-            <FormGroup>
-              <ControlLabel>{i18next.t('language.title')}</ControlLabel>
+            <Form.Group>
+              <Form.Label>{i18next.t('language.title')}</Form.Label>
               <br />
               <Toggle
                 onClick={this.onChangeLang}
@@ -188,30 +188,30 @@ class App extends Component {
                 offstyle="primary"
                 active={lang === 'ru'}
               />
-            </FormGroup>
+            </Form.Group>
           </Col>
-        </Row>
-        <Row>
+        </Form.Row>
+        <Form.Row>
           <Col sm={12}>
             <Preview size={size} mode={mode} onChange={this.onChange} previewSrc={previewSrc} />
           </Col>
-        </Row>
+        </Form.Row>
         <br />
         <FieldList lang={this.state.lang} fields={this.props.fields} />
         <LabelForm lang={this.state.lang} addLabels={this.addLabels} />
         {/* <LabelList labels={this.state.labels} /> */}
-        <Row className="controls-container text-center">
-          <Col sm={6} smOffset={3}>
+        <Form.Row className="controls-container text-center">
+          <Col sm={{ span: 6, offset: 3 }}>
             <Button onClick={this.calcJSON}>{i18next.t('controls.get_json')}</Button>
             <Button onClick={this.copyJSON}>{i18next.t('controls.copy_json')}</Button>
-            <FormControl
+            <Form.Control
               rows={5}
               componentClass="textarea"
               value={(json || undefined) && JSON.stringify(json)}
               readOnly
             />
           </Col>
-        </Row>
+        </Form.Row>
       </div>
     );
   }

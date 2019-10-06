@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import i18next from 'i18next';
-import update from 'immutability-helper';
 import { connect } from 'react-redux';
 import { setField } from '../redux/actions';
 import Field from '../Field';

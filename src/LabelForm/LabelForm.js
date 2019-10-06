@@ -1,7 +1,7 @@
 import React from 'react';
 import i18next from 'i18next';
 import { connect } from 'react-redux';
-import { Form, FormGroup, FormControl, Button, FormControlFeedback } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import { defaultStyle } from '../constants';
 import { setField } from '../redux/actions';
 
@@ -46,8 +46,8 @@ class LabelForm extends React.Component {
   render() {
     return (
       <Form onSubmit={this.handleSubmit}>
-        <FormGroup controlId="LabelFormId" className="label-form">
-          <FormControl
+        <Form.Group controlId="LabelFormId" className="label-form">
+          <Form.Control
             required
             className="label-form-id"
             type="text"
@@ -56,13 +56,9 @@ class LabelForm extends React.Component {
             placeholder={i18next.t('labels.placeholder.id')}
             onChange={this.handleChange}
           />
-          <FormControlFeedback
-            error={this.state.notUniqId}
-            message={i18next.t('labels.validation.not_uniq')}
-          />
-        </FormGroup>
-        <FormGroup controlId="LabelFormName" className="label-form">
-          <FormControl
+        </Form.Group>
+        <Form.Group controlId="LabelFormName" className="label-form">
+          <Form.Control
             required
             className="label-form-name"
             type="text"
@@ -71,7 +67,7 @@ class LabelForm extends React.Component {
             placeholder={i18next.t('labels.placeholder.name')}
             onChange={this.handleChange}
           />
-        </FormGroup>
+        </Form.Group>
         <Button type="submit">{i18next.t('labels.add')}</Button>
       </Form>
     );

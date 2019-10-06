@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import i18next from 'i18next';
-import { Row, Col, FormControl, Checkbox, FormGroup, ControlLabel } from 'react-bootstrap';
+import { Col, Form } from 'react-bootstrap';
 
 import { constants } from '../constants';
 import FieldBox from '../FieldBox';
@@ -19,17 +19,21 @@ const Field = (props) => {
   } = props;
 
   return (
-    <Row className="field">
-      <Col className="well" id={id} sm={6} smOffset={3}>
-        <Checkbox style={{ width: '50%' }} inline name={id} onChange={onCheckboxChange}>
-          {text}
-        </Checkbox>
+    <Form.Row className="field">
+      <Col className="well" id={id} sm={{ span: 6, offset: 3 }}>
+        <Form.Check
+          label={text}
+          style={{ width: '50%' }}
+          inline
+          name={id}
+          onChange={onCheckboxChange}
+        />
         { chosen && <FieldBox onResize={onResize} id={id} style={style} /> }
         { chosen && (
           <div className="field-group">
-            <FormGroup className="form-group">
-              <ControlLabel>{i18next.t('font_size')}</ControlLabel>
-              <FormControl
+            <Form.Group className="form-group">
+              <Form.Label>{i18next.t('font_size')}</Form.Label>
+              <Form.Control
                 type="number"
                 value={parseInt(style.fontSize, 10)}
                 max={constants.maxFontSize}
@@ -38,20 +42,20 @@ const Field = (props) => {
                 placeholder={i18next.t('font_size')}
                 onChange={handleFormControlChange}
               />
-            </FormGroup>
-            <FormGroup className="form-group">
-              <ControlLabel>{i18next.t('color')}</ControlLabel>
-              <FormControl
+            </Form.Group>
+            <Form.Group className="form-group">
+              <Form.Label>{i18next.t('color')}</Form.Label>
+              <Form.Control
                 type="color"
                 data-css-name="color"
                 name={id}
                 value={style.color}
                 onChange={handleFormControlChange}
               />
-            </FormGroup>
-            <FormGroup className="form-group">
-              <ControlLabel>{i18next.t('text_align.title')}</ControlLabel>
-              <FormControl
+            </Form.Group>
+            <Form.Group className="form-group">
+              <Form.Label>{i18next.t('text_align.title')}</Form.Label>
+              <Form.Control
                 value={style.textAlign}
                 name={id}
                 data-css-name="textAlign"
@@ -62,12 +66,12 @@ const Field = (props) => {
                 <option value="left">{i18next.t('text_align.left')}</option>
                 <option value="center">{i18next.t('text_align.center')}</option>
                 <option value="right">{i18next.t('text_align.right')}</option>
-              </FormControl>
-            </FormGroup>
+              </Form.Control>
+            </Form.Group>
           </div>
         )}
       </Col>
-    </Row>
+    </Form.Row>
   );
 };
 
