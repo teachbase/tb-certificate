@@ -161,47 +161,49 @@ class App extends Component {
             <Alert className="text-center" bsStyle="danger" onDismiss={this.handleAlertDismiss}>{error}</Alert>
           </Col>
         )}
-        <Row>
-          <Col sm={2} smOffset={4}>
-            <FormGroup className="mode-group">
-              <ControlLabel>{i18next.t('page_orientation.title')}</ControlLabel>
-              <br />
-              <Toggle
-                onClick={this.onChangeMode}
-                on={i18next.t('page_orientation.portrait')}
-                off={i18next.t('page_orientation.landscape')}
-                size="sm"
-                offstyle="primary"
-                active={mode === 'portrait'}
-              />
-            </FormGroup>
-          </Col>
-          <Col sm={2}>
-            <FormGroup>
-              <ControlLabel>{i18next.t('language.title')}</ControlLabel>
-              <br />
-              <Toggle
-                onClick={this.onChangeLang}
-                on={i18next.t('language.russian')}
-                off={i18next.t('language.english')}
-                size="sm"
-                offstyle="primary"
-                active={lang === 'ru'}
-              />
-            </FormGroup>
-          </Col>
-        </Row>
-        <Row>
-          <Col sm={12}>
-            <Preview size={size} mode={mode} onChange={this.onChange} previewSrc={previewSrc} />
-          </Col>
-        </Row>
-        <br />
-        <FieldList lang={this.state.lang} fields={this.props.fields} />
-        <LabelForm lang={this.state.lang} addLabels={this.addLabels} />
-        {/* <LabelList labels={this.state.labels} /> */}
-        <Row className="controls-container text-center">
-          <Col sm={6} smOffset={3}>
+        <Col sm={4} md={4} className="fields">
+          <FieldList lang={this.state.lang} fields={this.props.fields} />
+          <h4>Groups</h4>
+          <LabelForm lang={this.state.lang} addLabels={this.addLabels} />
+          {/* <LabelList labels={this.state.labels} /> */}
+        </Col>
+        <Col sm={7} md={7}>
+          <Row>
+            <Col sm={3} smOffset={3}>
+              <FormGroup className="mode-group">
+                <ControlLabel>{i18next.t('page_orientation.title')}</ControlLabel>
+                <br />
+                <Toggle
+                  onClick={this.onChangeMode}
+                  on={i18next.t('page_orientation.portrait')}
+                  off={i18next.t('page_orientation.landscape')}
+                  size="sm"
+                  offstyle="primary"
+                  active={mode === 'portrait'}
+                />
+              </FormGroup>
+            </Col>
+            <Col sm={3}>
+              <FormGroup>
+                <ControlLabel>{i18next.t('language.title')}</ControlLabel>
+                <br />
+                <Toggle
+                  onClick={this.onChangeLang}
+                  on={i18next.t('language.russian')}
+                  off={i18next.t('language.english')}
+                  size="sm"
+                  offstyle="primary"
+                  active={lang === 'ru'}
+                />
+              </FormGroup>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={12}>
+              <Preview size={size} mode={mode} onChange={this.onChange} previewSrc={previewSrc} />
+            </Col>
+          </Row>
+          <Row className="controls-container text-center">
             <Button onClick={this.calcJSON}>{i18next.t('controls.get_json')}</Button>
             <Button onClick={this.copyJSON}>{i18next.t('controls.copy_json')}</Button>
             <FormControl
@@ -210,8 +212,8 @@ class App extends Component {
               value={(json || undefined) && JSON.stringify(json)}
               readOnly
             />
-          </Col>
-        </Row>
+          </Row>
+        </Col>
       </div>
     );
   }

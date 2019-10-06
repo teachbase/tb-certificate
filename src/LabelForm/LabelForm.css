@@ -4,6 +4,17 @@
 */
 
 .label-form {
+  margin-left: -15px;
+  width: 110%
+}
+
+.label-form .form-control-feedback {
+  width: 200px;
+  left: -55px;
+  top: 20px;
+}
+
+.label-form-field {
   display: inline;
 }
 
@@ -13,10 +24,9 @@
 }
 
 .label-form-id {
-  width: 100px;
-  margin-left: 40px;
+  width: 70px;
 }
 
 .label-form-name {
-  width: 250px;
+  width: 220px;
 }

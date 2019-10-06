@@ -26,6 +26,7 @@
   cursor: move;
   z-index: 2;
   line-height: 1.44;
+  right: 10px;
 }
 .box .text {
   text-align: center;

@@ -25,15 +25,15 @@
         "copy_json": "Copy to clipboard"
       },
       "labels": {
-        "add": "Add group",
+        "add": "Add",
         "label": "{{group_id}} Group",
         "group": "Subgroup",
         "placeholder": {
-          "id": "Group ID",
+          "id": "ID",
           "name": "Printed name"
         },
         "validation": {
-          "not_uniq": "Field with ID already exists."
+          "not_uniq": "ID already in use."
         }
       },
       "errors": {

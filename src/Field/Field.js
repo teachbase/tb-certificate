@@ -20,8 +20,8 @@ const Field = (props) => {
 
   return (
     <Row className="field">
-      <Col className="well" id={id} sm={6} smOffset={3}>
-        <Checkbox style={{ width: '50%' }} inline name={id} onChange={onCheckboxChange}>
+      <Col className="well" id={id}>
+        <Checkbox inline name={id} onChange={onCheckboxChange}>
           {text}
         </Checkbox>
         { chosen && <FieldBox onResize={onResize} id={id} style={style} /> }
