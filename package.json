@@ -9,7 +9,7 @@
     "i18next": "^7.1.2",
     "immutability-helper": "^2.1.2",
     "react": "^15.4.2",
-    "react-bootstrap": "^0.32.5",
+    "react-bootstrap": "^0.32.4",
     "react-bootstrap-toggle": "^2.0.4",
     "react-dom": "^15.4.2",
     "react-draggable": "^2.2.3",
