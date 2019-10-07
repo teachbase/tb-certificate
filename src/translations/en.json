@@ -24,6 +24,19 @@
         "get_json": "Get data",
         "copy_json": "Copy to clipboard"
       },
+      "labels": {
+        "add": "Add",
+        "label": "{{group_id}} Group",
+        "group": "Subgroup",
+        "title": "Groups and Subgroups",
+        "placeholder": {
+          "id": "ID",
+          "name": "Printed name"
+        },
+        "validation": {
+          "not_uniq": "ID already in use."
+        }
+      },
       "errors": {
         "not_image": "Upload an image"
       },

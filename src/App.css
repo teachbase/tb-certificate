@@ -3,6 +3,10 @@
   position: relative;
 }
 
+.App .fields {
+  margin-top: 93px;
+}
+
 .mode-group {
   float: right;
   text-align: right;

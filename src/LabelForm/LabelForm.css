@@ -1,0 +1,27 @@
+.label-form {
+  margin-left: -15px;
+  width: 110%
+}
+
+.label-form .form-control-feedback {
+  width: 200px;
+  left: -55px;
+  top: 20px;
+}
+
+.label-form-field {
+  display: inline;
+}
+
+.label-form-name, .label-form-id {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.label-form-id {
+  width: 70px;
+}
+
+.label-form-name {
+  width: 220px;
+}

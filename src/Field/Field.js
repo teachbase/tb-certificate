@@ -11,6 +11,7 @@ const Field = (props) => {
   const {
     chosen,
     id,
+    text,
     style,
     handleFormControlChange,
     onResize,
@@ -19,11 +20,11 @@ const Field = (props) => {
 
   return (
     <Row className="field">
-      <Col className="well" id={id} sm={6} smOffset={3}>
-        <Checkbox style={{ width: '50%' }} inline name={id} onChange={onCheckboxChange}>
-          {i18next.t(`fields.${id}`)}
+      <Col className="well" id={id}>
+        <Checkbox inline name={id} onChange={onCheckboxChange}>
+          {text}
         </Checkbox>
-        { chosen && <FieldBox onResize={onResize} id={id} style={style} /> }
+        { chosen && <FieldBox onResize={onResize} id={id} text={text} style={style} /> }
         { chosen && (
           <div className="field-group">
             <FormGroup className="form-group">
@@ -73,6 +74,7 @@ const Field = (props) => {
 Field.propTypes = {
   chosen:                  PropTypes.bool,
   id:                      PropTypes.string.isRequired,
+  text:                    PropTypes.string.isRequired,
   style:                   PropTypes.object.isRequired,
   handleFormControlChange: PropTypes.func.isRequired,
   onCheckboxChange:        PropTypes.func.isRequired,
