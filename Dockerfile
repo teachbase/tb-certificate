@@ -1,20 +1,11 @@
-FROM node:latest
+FROM node:15.14.0-alpine3.10
 
-MAINTAINER labriko@yandex.ru
+WORKDIR /tb_certificate
 
-WORKDIR /tmp
-ADD package.json /tmp/package.json
-RUN npm config set registry http://registry.npmjs.org/
-RUN npm install
-RUN mkdir -p /usr/src/app
-RUN cp -a /tmp/node_modules /usr/src/app
+COPY . .
 
-WORKDIR /usr/src/app
-
-ADD . /usr/src/app
-
-RUN npm run build
+RUN yarn install && yarn build
 
 EXPOSE 8080
 
-CMD [ "npm", "run", "prod" ]
+CMD [ "yarn", "run", "prod" ]
