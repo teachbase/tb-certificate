@@ -19,3 +19,7 @@
 .controls-container button {
   margin: 20px;
 }
+
+.light-text-note {
+  font-weight: 300;
+}
