@@ -192,6 +192,11 @@ class App extends Component {
             </Col>
           </Row>
           <Row>
+            <Col sm={6} smOffset={3} className="text-center">
+              <ControlLabel className="small light-text-note">{i18next.t('size_note')}</ControlLabel>
+            </Col>
+          </Row>
+          <Row>
             <Col sm={12}>
               <Preview size={size} mode={mode} onChange={this.onChange} previewSrc={previewSrc} />
             </Col>
