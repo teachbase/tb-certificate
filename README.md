@@ -32,11 +32,6 @@ npm run prod
 ```
 Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
 
-## Deploy 
-```
-$ ssh deplo@cert.teachbase.ru -i ~/.ssh/prod_2018 -p 2022
-$ cd /webapps/tb_certs
-$ git pull origin master
-$ yarn
-$ yarn build
-```
+## Deploy to k8s
+
+[Deploy](https://github.com/teachbase/tb-kube/tree/main/tb-certificate)
