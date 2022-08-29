@@ -15,7 +15,8 @@
     "react-draggable": "^2.2.3",
     "react-redux": "5",
     "react-resizable": "^1.6.0",
-    "redux": "3"
+    "redux": "3",
+    "bootstrap": "3.3.7"
   },
   "devDependencies": {
     "eslint": "^3.17.1",
